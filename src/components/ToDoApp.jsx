@@ -1,22 +1,14 @@
 import React from 'react';
 import ToDoItem from './ToDoItem';
+import ToDoData from './ToDoData';
+
 const ToDo = () => {
-    /*
-<input type="checkbox" name="" id="" /><p>Create react project</p>
-                <input type="checkbox" name="" id="" /><p>Create project clone</p>
-                <input type="checkbox" name="" id="" /><p>Fix personal website</p>
-                <input type="checkbox" name="" id="" /><p>Apply for internships + junior roles</p>
+    const todoComponents = ToDoData.map((todo)=><ToDoItem todoKey={todo.id} todoText={todo.text} todoChecked={todo.completed}/>)
 
-
-    */
     return (
         <div className='ToDo-page'>
             <h1>To Do List</h1>
-                <ToDoItem></ToDoItem>
-                <ToDoItem></ToDoItem>
-                <ToDoItem></ToDoItem>
-                <ToDoItem></ToDoItem>
-                <ToDoItem></ToDoItem>
+                {todoComponents}
         </div>
     );
 }
