@@ -7,8 +7,8 @@ class ToDo extends React.Component {
     super();
     this.state = {
       todos: ToDoData,
-    };
-    this.handleChange = this.handleChange.bind(this);
+    }
+    this.handleChange = this.handleChange.bind(this)
   }
   handleChange(id) {
     //receiving the id from props.todoKey (shown in ToDoItem.jsx)
@@ -16,23 +16,24 @@ class ToDo extends React.Component {
       //always put the previous state before the arrow function. //map through the whole ToDoData array so you can target specific elements within the array
       const newToDoData = prev.todos.map(todo => {
         if (todo.id === id) {
-          todo.completed = !todo.completed;
+          todo.completed = !todo.completed
         }
-        return todo;
-      });
-      return { todos: newToDoData };
-    });
+        return todo
+      })
+      return{
+        todos: newToDoData
+      }
+      
+    })
   }
   render() {
-    const todoComponents = this.state.todos.map((todo) => (
+    const todoComponents = this.state.todos.map(item =>
       <ToDoItem
-        key={todo.id}
-        todoKey={todo.id}
-        todoText={todo.text}
-        todoChecked={todo.completed}
+        key={item.id}
+        item={item}
         handleChange={this.handleChange}
       />
-    ));
+    );
 
     return (
       <div className="ToDo-page">
