@@ -20,11 +20,12 @@ class ToDo extends React.Component {
         }
         return todo
       })
-      return{
+      return {
         todos: newToDoData
       }
+      }
       
-    })
+    )
   }
   render() {
     const todoComponents = this.state.todos.map(item =>
